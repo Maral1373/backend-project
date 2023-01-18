@@ -14,6 +14,12 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  favoriteBooks: [
+    {
+      type: mongoose.Types.ObjectId,
+      ref: "product",
+    },
+  ],
 });
 
 UserSchema.pre("save", async function (next) {

@@ -5,18 +5,21 @@ const BookSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Author: {
+  author: {
     type: String,
     required: true,
   },
   genre: {
     type: String,
   },
-  img:
+  users: [
     {
-        data: Buffer,
-        contentType: String
-    }
+      user: {
+        type: mongoose.Types.ObjectId,
+        ref: "user",
+      },
+    },
+  ],
 });
 
 const BookModel = mongoose.model("Book", BookSchema);

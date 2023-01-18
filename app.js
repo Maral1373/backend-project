@@ -17,6 +17,8 @@ import { ExtractJwt, Strategy as JWTstrategy } from "passport-jwt";
 
 app.use(express.json());
 app.use(cors());
+// Set EJS as templating engine
+app.set("view engine", "ejs");
 
 app.use("/book", bookRouter);
 app.use("/", userRouter);
